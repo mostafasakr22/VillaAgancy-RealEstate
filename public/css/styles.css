@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#sidebar-wrapper {
+    position: fixed;         
+    width: 250px;            
+    height: 100vh;           
+    top: 0;                  
+    left: 0;                 
+    background-color: #343a40; 
+    transition: all 0.3s;    
+    z-index: 999;           
+    overflow-y: auto;       
+}
+#sidebar-wrapper .sidebar-heading {
+    padding: 15px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #343a40;
+    
+}
+
+#sidebar-wrapper .list-group-item {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    
+}
+
+#sidebar-wrapper .list-group-item i {
+    margin-right: 10px;
+    
+    
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding: 20px;
+    transition: all 0.3s;
+    margin-left: 250px; /* المسافة التي تعادل عرض الـ sidebar */
+    
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 80px;
+    
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group-item {
+    justify-content: center;
+    padding: 15px 0;
+}
+
+#wrapper.toggled #sidebar-wrapper .list-group-item span {
+    display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper .sidebar-heading span {
+    display: none;
+    
+}
+
+#wrapper.toggled #sidebar-wrapper .sidebar-heading button {
+    margin-left: auto;
+    
+}
+
+
+
+/* Card Styles */
+.card {
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 20px;
+    transition: transform 0.3s;
+    margin-left: 70px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    font-size: 2.5rem;
+}
+
+.card .card-title {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+.card .card-text {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Media Query for Responsive */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        width: 250px;
+        margin-left: -250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+        width: 80px;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        margin-left: 80px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
